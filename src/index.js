@@ -1,8 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import 'whatwg-fetch'
 
+import React, { Fragment } from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
+
+import createStore from './createStore'
+
+
+const store = createStore()
 
 ReactDOM.render(
-  <div></div>,
+    <Provider store={store} >
+    </Provider>,
   document.getElementById('app')
 );
