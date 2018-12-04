@@ -1,24 +1,10 @@
 import { objectToParamString } from "./utils"
 
-const FETCH_POST_OPTIONS = {
-    credentials: 'same-origin',
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-    },
-    method: 'POST'
-}
-
-const FETCH_GET_OPTIONS = {
-    credentials: 'same-origin',
-    method: 'GET'
-}
-
-const endpoints = {
-    loggedin: "/api/loggedin",
-    signup: "/api/signup",
-    login: "/api/login",
-    logout: "/api/logout"
-}
+import { 
+    FETCH_GET_OPTIONS,
+    FETCH_POST_OPTIONS,
+    endpoints
+} from "./common"
 
 export const isLoggedIn = () => {
     return fetch(endpoints.loggedin, FETCH_GET_OPTIONS).then(res => {

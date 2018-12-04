@@ -7,13 +7,16 @@ import { Provider } from 'react-redux'
 import createStore from './createStore'
 
 import User from './cmp/user/User'
+import Tasks from './cmp/tasks/Tasks'
 
 const store = createStore()
 
 ReactDOM.render(
     <Provider store={store} >
-        <User />
-        {/* <Tasks /> */}
+        <Fragment>
+            <User />
+            <Tasks />
+        </Fragment>
     </Provider>,
   document.getElementById('app')
 );
